@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="684.0" prefWidth="1160.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="684.0" prefWidth="1160.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ViewPrincipalController">
    <children>
       <AnchorPane prefHeight="52.0" prefWidth="1160.0" style="-fx-background-color: #ADB5BD;">
          <children>
@@ -33,12 +32,12 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TitledPane ellipsisString="" expanded="false" layoutX="57.0" layoutY="101.0" prefHeight="63.0" prefWidth="154.0" text="Alimentos Enlatados">
+      <TitledPane fx:id="cat1" ellipsisString="" layoutX="57.0" layoutY="101.0" prefHeight="63.0" prefWidth="154.0" text="Alimentos Enlatados">
          <content>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <ImageView fitHeight="52.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button mnemonicParsing="false" text="Ver" />
+                  <Button fx:id="ver1" mnemonicParsing="false" onAction="#verAlimentosEnlatados" text="Ver" />
                </children>
             </HBox>
          </content>
@@ -133,7 +132,7 @@
             </HBox>
          </content>
       </TitledPane>
-      <TitledPane ellipsisString="" expanded="false" layoutX="264.0" layoutY="101.0" prefHeight="63.0" prefWidth="154.0" text="Lacteos">
+      <TitledPane fx:id="cat2" ellipsisString="" expanded="false" layoutX="264.0" layoutY="101.0" prefHeight="63.0" prefWidth="154.0" text="Lacteos">
          <content>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>

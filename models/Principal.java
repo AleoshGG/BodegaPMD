@@ -1,20 +1,38 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Principal {
+public class Principal extends Application {
 
     public static void main(String[] args) {
-        iniciarSecion();
+        launch (args);
+        //iniciarSecion();
     }
     
     public static void iniciarSecion() {
+        
         Administrador admin = new Administrador();
         
         if (admin.accederSistema()){
             menuPrincipal(admin);
         }
+    }
+    
+    @Override 
+    public void start (Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/views/viewLogin.fxml"));
+        Scene scene = new Scene(root);
+        stage.setTitle("Login");
+        stage.setScene(scene);
+        stage.show();
     }
     
     public static void menuPrincipal(Administrador admin) {      

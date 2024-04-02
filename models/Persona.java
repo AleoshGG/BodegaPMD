@@ -1,3 +1,5 @@
+package models;
+
 public abstract class Persona {
     //Atributos heredables 
     protected String nombre;

@@ -1,11 +1,21 @@
 package models;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 
-public class Menu {
+public class Menu extends Application {
     
     public void menuPrincipal() {      
         Inventario inventario =  new Inventario();
@@ -41,8 +51,9 @@ public class Menu {
                         inventario.eliminarProducto( 1);
                     }
                 break;
-                case 5:
-                    verCantidadProductos(inventario);                  
+                case 5:                   
+                    
+                    //verCantidadProductos(inventario);                  
                 break;
                 case 6:
                     verUbicacionProducto(inventario);
@@ -64,6 +75,18 @@ public class Menu {
             
         } while (opcion != 0);
     }
+    
+    @Override
+    public void start (Stage stage) throws Exception {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+        Parent root = FXMLLoader.load(getClass().getResource("/views/viewVerProductos.fxml"));
+        Scene scene = new Scene(root);
+        stage.setTitle("Ver los productos");
+        stage.setScene(scene);
+        stage.show();
+                             
+    }
+    
     
     private boolean leerLista(ArrayList lista, String mensaje){
         boolean bandera = false;
@@ -138,4 +161,5 @@ public class Menu {
             }
         }
     }
+
 }

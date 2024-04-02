@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.VerProductosController">
+   <children>
+      <AnchorPane prefHeight="47.0" prefWidth="1065.0" style="-fx-background-color: #ADB5BD;">
+         <children>
+            <Label layoutX="230.0" layoutY="11.0" text="Productos existentes">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="29.0" layoutY="61.0" text="Seleccione la categoría:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="CBCategorias" layoutX="205.0" layoutY="61.0" prefWidth="150.0" />
+      <TableView fx:id="tablaProductos" layoutX="29.0" layoutY="117.0" prefHeight="453.0" prefWidth="1006.0">
+        <columns>
+          <TableColumn fx:id="nombreP" prefWidth="206.0" text="Nombre" />
+          <TableColumn fx:id="codigoP" prefWidth="205.0" text="Código" />
+            <TableColumn fx:id="costoP" prefWidth="106.0" text="Costo" />
+            <TableColumn fx:id="fechaP" prefWidth="162.0" text="Fecha de caducidad" />
+            <TableColumn fx:id="existenciaP" prefWidth="139.0" text="Existencia" />
+            <TableColumn fx:id="nombreProP" prefWidth="187.0" text="Proveedor" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

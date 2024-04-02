@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package controllers;
 
 import java.awt.Window;
@@ -19,9 +15,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import models.Administrador;
+import models.Menu;
+import models.Principal;
 
 /**
  * FXML Controller class
@@ -33,6 +32,8 @@ public class LoginController implements Initializable {
     private Administrador admin = new Administrador();
     private int contador = 0;
     
+    @FXML
+    private TextField inputUser;
     @FXML
     private PasswordField inputPassword;
     @FXML
@@ -46,37 +47,34 @@ public class LoginController implements Initializable {
         // TODO
     }
 
-    public void contadorIntentos(){
+    public void contadorIntentos(){                
         if (contador >= 3){
             btnAcceder.setDisable(true);
         }
     }
 
+    
     @FXML
     private void accederSistema(ActionEvent event) throws IOException {
         
         String password = inputPassword.getText();
+        String user = inputUser.getText();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         
 
-        if (admin.accederSistema(password)==true) {
-            
+        if (admin.accederSistema(password, user)) {          
             Object eventSource = event.getSource(); 
-            Node sourceAsNode = (Node) eventSource ;
+            Node sourceAsNode = (Node) eventSource;
             Scene oldScene = sourceAsNode.getScene();
             javafx.stage.Window window = oldScene.getWindow();
-            Stage stage = (Stage) window ;
-            //stage.hide(); OCULTA LA ECENA
-                        
-            Parent root = FXMLLoader.load(getClass().getResource("/views/viewPrincipal.fxml"));
-            Scene scene = new Scene(root);
-            stage.setTitle("Inicio");
-            stage.setScene(scene);
-                                  
+            Stage stage = (Stage) window;
+            stage.hide();
+            Menu menuPrincipal = new Menu();
+            menuPrincipal.menuPrincipal();
             
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setHeaderText(null);
-            alert.setTitle("Info");
+            alert.setTitle("Alerta");
             alert.setContentText("Le queda "+(2-contador)+" intentos");
             alert.showAndWait();
             contador++;

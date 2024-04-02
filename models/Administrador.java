@@ -1,6 +1,5 @@
 package models;
 
-import java.util.Scanner;
 
 public class Administrador extends Persona {
     //Atributos
@@ -12,31 +11,14 @@ public class Administrador extends Persona {
     }
     
     //Demás métodos    
-    public boolean accederSistema(){
-        Scanner sc = new Scanner(System.in);
-        boolean bandera;
-        String password,usuario;
-        int contador = 0;
-        
-        System.out.println("\tLogin");
-        
-        do {
-            System.out.print("Ingrese el usuario: ");
-            usuario = sc.nextLine();
-            System.out.print("Ingrese la contrasenia: ");
-            password = sc.nextLine();
-            
+    public boolean accederSistema(String password, String usuario){
+        boolean bandera;         
             if (this.password.equals(password) && nombre.equals(usuario)) {
                 //Validacion exitosa
-                bandera = true;
-                contador = 0;
-            } else {
-                contador++;
+                bandera = true;      
+            } else {             
                 bandera = false;
-            }
-        
-        } while (contador != 0 && contador < 3);
-        
+            }        
         return bandera;
     }
     

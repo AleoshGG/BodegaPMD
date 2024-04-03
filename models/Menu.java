@@ -1,14 +1,27 @@
 package models;
 
+import controllers.VerProductosController;
+import java.awt.Desktop.Action;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
 
 
 public class Menu {
     
-    public void menuPrincipal() {      
+    
+    
+    public void menuPrincipal(ActionEvent event) throws IOException, Exception {      
         Inventario inventario =  new Inventario();
         ArrayList<Proveedor> proveedores = new ArrayList();        
         int opcion = 0;
@@ -42,7 +55,9 @@ public class Menu {
                         inventario.eliminarProducto( 1);
                     }
                 break;
-                case 5:                   
+                case 5:
+                    VerProductosController controller = new VerProductosController();
+                    controller.getCategoria(event);
                     
                     //verCantidadProductos(inventario);                  
                 break;

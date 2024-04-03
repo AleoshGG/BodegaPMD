@@ -55,7 +55,7 @@ public class LoginController implements Initializable {
 
     
     @FXML
-    private void accederSistema(ActionEvent event) throws IOException {
+    private void accederSistema(ActionEvent event) throws IOException, Exception {
         
         String password = inputPassword.getText();
         String user = inputUser.getText();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
@@ -69,7 +69,7 @@ public class LoginController implements Initializable {
             Stage stage = (Stage) window;
             stage.hide();
             Menu menuPrincipal = new Menu();
-            menuPrincipal.menuPrincipal();
+            menuPrincipal.menuPrincipal(event);
             
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);

@@ -15,7 +15,7 @@ public class Principal extends Application {
     
     @Override 
     public void start (Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/viewVerProductos.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/views/viewLogin.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Login");
         stage.setScene(scene);

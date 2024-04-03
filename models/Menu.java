@@ -73,7 +73,11 @@ public class Menu {
         if (lista.size() >= 1) {
             bandera = true;
         } else {
-            System.out.println(mensaje);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText(null);
+            alert.setTitle("Alerta");
+            alert.setContentText(mensaje);
+            alert.showAndWait();
         }
         
         return bandera;

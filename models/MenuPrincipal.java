@@ -82,7 +82,7 @@ public class MenuPrincipal extends Menu {
             
             for(int i = 0; i < inventario.getListaProductos().size(); i++) {
                 if (categoria.equals(inventario.getListaProductos().get(i).getCategoria()) && nombre.equals(inventario.getListaProductos().get(i).getNombre())) {
-                    System.out.println(inventario.getListaProductos().get(i).getAnaquel().verUbicacion());
+                    inventario.getListaProductos().get(i).getAnaquel().verUbicacion();
                     bandera = false;
                 }
             }

@@ -204,8 +204,7 @@ public class Inventario {
         int day = fechaActual.get(Calendar.DAY_OF_MONTH);
         fechaActual.set(year, month, day);
         
-        if (comportamiento == 0) {
-            if (menuSeleccion.leerLista(productos, "")) {
+        if (comportamiento == 0) {  
                 for (int i = 0; i < productos.size(); i++) {
                     if (!productos.get(i).getFechaCaducidad().before(fechaActual)) {
                     } else {
@@ -213,8 +212,7 @@ public class Inventario {
                         productos.remove(i);
                         bandera = false;
                     }
-                }
-            }
+                }   
         } 
             
         if (comportamiento == 1) {

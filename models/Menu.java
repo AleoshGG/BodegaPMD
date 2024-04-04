@@ -3,6 +3,7 @@ package models;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import javafx.scene.control.Alert;
 
 public abstract class Menu {
     private int opcion;
@@ -13,10 +14,14 @@ public abstract class Menu {
     public boolean leerLista(ArrayList lista, String mensaje) {
         boolean bandera = false;
         
-        if (lista.size() >= 1) {
+        if (lista   .size() >= 1) {
             bandera = true;
         } else {
-            System.out.println(mensaje);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText(null);
+            alert.setTitle("Alerta");
+            alert.setContentText(mensaje);
+            alert.showAndWait();
         }
         
         return bandera;

@@ -2,6 +2,7 @@ package models;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import javafx.scene.control.Alert;
 
 public class Anaquel {
     //Atributos
@@ -27,8 +28,12 @@ public class Anaquel {
     }
      
     //Demás métodos
-    public String verUbicacion() {
-        return "\nEl producto esta ubicado en: \nAnaquel: "+numeroAnaquel+"  Seccion: "+seccion;
+    public void verUbicacion() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("Ubicación del producto");
+        alert.setContentText("El producto está ubicado en: \nAnaquel: " +  numeroAnaquel + " Sección: " + seccion);
+        alert.showAndWait();
     }
     
     

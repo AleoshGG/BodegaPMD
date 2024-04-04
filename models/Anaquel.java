@@ -2,9 +2,11 @@ package models;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import javafx.scene.control.Alert;
 
 public class Anaquel {
     //Atributos
+    private MenuSeleccion menuSeleccion = new MenuSeleccion();
     private int numeroAnaquel;
     private int seccion;
     
@@ -26,23 +28,20 @@ public class Anaquel {
     }
      
     //Demás métodos
-    public String verUbicacion() {
-        return "\nEl producto esta ubicado en: \nAnaquel: "+numeroAnaquel+"  Seccion: "+seccion;
+    public void verUbicacion() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("Ubicación del producto");
+        alert.setContentText("El producto está ubicado en: \nAnaquel: " +  numeroAnaquel + " Sección: " + seccion);
+        alert.showAndWait();
     }
     
-    public int ingresarEntero(String mensaje) throws InputMismatchException {
-        Scanner sc = new Scanner(System.in);
-        int numero;
-        System.out.print(mensaje);
-        numero = sc.nextInt();
-        return numero;
-    }
     
     public int validarNumero(int numero, String advertencia, String mensaje){
         while (numero < 1) {
             System.out.println(advertencia+" vuelva a intenterlo");
             try {
-                numero = ingresarEntero(mensaje);
+                numero = menuSeleccion.ingresarEntero(mensaje);
             } catch (InputMismatchException e) {
                 System.out.println("Ingrese numeros enteros por favor");
             }

@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import models.Administrador;
 import models.Menu;
+import models.MenuPrincipal;
 import models.Principal;
 
 /**
@@ -68,9 +69,10 @@ public class LoginController implements Initializable {
             javafx.stage.Window window = oldScene.getWindow();
             Stage stage = (Stage) window;
             stage.hide();
-            Menu menuPrincipal = new Menu();
-            menuPrincipal.menuPrincipal(event);
-            
+
+            Menu menuPrincipal = new MenuPrincipal();
+            menuPrincipal.mostrarMenu();            
+
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setHeaderText(null);

@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Producto {
     //Atributos
+    private MenuSeleccion menuSeleccion = new MenuSeleccion();
     private int codigoBarras;
     private double costo;
     private String nombre;
@@ -87,7 +88,7 @@ public class Producto {
         try {
             System.out.print("Ingrese el nombre: ");
             this.proveedor.setNombre(sc.nextLine());
-            long numero = ingresarLong("Ingrese el numero de telefono: ");
+            long numero = menuSeleccion.ingresaLong("Ingrese el numero de telefono: ");
             this.proveedor.setTelefono(numero);
             System.out.print("\nIngrese la direccion: ");
             this.proveedor.setDireccion(sc.nextLine());
@@ -99,9 +100,9 @@ public class Producto {
     
     public void incluirAnaquel() {
         try {
-            int numeroA = ingresarEntero("Ingrese el numero de anaquel: : ");
+            int numeroA = menuSeleccion.ingresarEntero("Ingrese el numero de anaquel: : ");
             this.anaquel.setNumeroAnaquel(numeroA);
-            int numeroS = ingresarEntero("Ingrese el numero de seccion: ");
+            int numeroS = menuSeleccion.ingresarEntero("Ingrese el numero de seccion: ");
             this.anaquel.setSeccion(numeroS);
         } catch (InputMismatchException e) {
             System.out.println("Intentelo de nuevo");
@@ -116,35 +117,11 @@ public class Producto {
         return codigo;
     }
     
-     public int ingresarEntero(String mensaje) throws InputMismatchException {
-        Scanner sc = new Scanner(System.in);
-        int numero;
-        System.out.print(mensaje);
-        numero = sc.nextInt();
-        return numero;
-    }
-     
-    public double ingresarDouble(String mensaje) throws InputMismatchException {
-        Scanner sc = new Scanner(System.in);
-        double numero;
-        System.out.print(mensaje);
-        numero = sc.nextInt();
-        return numero;
-    }
-    
-    public long ingresarLong(String mensaje) throws InputMismatchException {
-        Scanner sc = new Scanner(System.in);
-        long numero;
-        System.out.print(mensaje);
-        numero = sc.nextLong();
-        return numero;
-    }
-    
     public int validarNumero(int numero, int limiteI,int limiteD, String advertencia, String mensaje){
         while (numero < limiteI || numero > limiteD) {
             System.out.println(advertencia+" vuelva a intenterlo");
             try {
-                numero = ingresarEntero(mensaje);
+                numero = menuSeleccion.ingresarEntero(mensaje);
             } catch (InputMismatchException e) {
                 System.out.println("Ingrese numeros por favor");
             }
@@ -157,7 +134,7 @@ public class Producto {
         while (numero < 1) {
             System.out.println(advertencia+" vuelva a intenterlo");
             try {
-                numero = ingresarEntero(mensaje);
+                numero = menuSeleccion.ingresarEntero(mensaje);
             } catch (InputMismatchException e) {
                 System.out.println("Ingrese numeros por favor");
             }
@@ -170,7 +147,7 @@ public class Producto {
         while (numero < 1) {
             System.out.println(advertencia+" vuelva a intenterlo");
             try {
-                numero = ingresarDouble(mensaje);
+                numero = menuSeleccion.ingresaDouble(mensaje);
             } catch (InputMismatchException e) {
                 System.out.println("Ingrese numeros por favor");
             }
@@ -183,7 +160,7 @@ public class Producto {
         while (numero < 1) {
             System.out.println(advertencia+" vuelva a intenterlo");
             try {
-                numero = ingresarEntero(mensaje);
+                numero = menuSeleccion.ingresarEntero(mensaje);
             } catch (InputMismatchException e) {
                 System.out.println("Ingrese numeros por favor");
             }

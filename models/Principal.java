@@ -10,7 +10,6 @@ public class Principal extends Application {
 
     public static void main(String[] args) {
         launch (args);
-        Menu.launch(Menu.class, args);
     }
     
     @Override 

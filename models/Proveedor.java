@@ -1,10 +1,10 @@
 package models;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class Proveedor extends Persona {
     //Atributos 
+    private MenuSeleccion menuSeleccion = new MenuSeleccion();
     private long telefono;
     private String direccion;
         
@@ -29,20 +29,12 @@ public class Proveedor extends Persona {
     public String verSujeto() {
         return "\nNombre: "+nombre+"\nDireccion: "+direccion+"\nTelefono: "+telefono;
     }
-    
-    public long ingresarLong(String mensaje) throws InputMismatchException {
-        Scanner sc = new Scanner(System.in);
-        long numero;
-        System.out.print(mensaje);
-        numero = sc.nextLong();
-        return numero;
-    }
-    
+        
     public long validarNumero(long numero, String advertencia, String mensaje){
         while (numero < 1) {
             System.out.println(advertencia+" vuelva a intenterlo");
             try {
-                numero = ingresarLong(mensaje);
+                numero = menuSeleccion.ingresaLong(mensaje);
             } catch (InputMismatchException e) {
                 System.out.println("Ingrese numeros por favor");
             }

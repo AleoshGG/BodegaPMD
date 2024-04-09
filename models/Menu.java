@@ -6,8 +6,8 @@ import java.util.Scanner;
 import javafx.scene.control.Alert;
 
 public abstract class Menu {
-    private int opcion;
-    private ArrayList lista;
+    protected int opcion;
+    protected ArrayList lista;
     
     public abstract Object mostrarMenu();
     

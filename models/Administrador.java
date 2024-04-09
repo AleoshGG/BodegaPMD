@@ -20,10 +20,6 @@ public class Administrador extends Persona {
                 bandera = false;
             }        
         return bandera;
-    }
-    
-    public String verSujeto() {
-        return "\nNombre: "+nombre;
-    }
+    }    
     
 }

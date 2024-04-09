@@ -61,7 +61,7 @@ public class Inventario {
 
                 if (year > 2000 && year <2050 && month > 0 && month < 13 && day > 0 && day < 32) {
                     Calendar fechaCaducidad = Calendar.getInstance();
-                    fechaCaducidad.set(year, month, day);
+                    fechaCaducidad.set(year, month-11, day);
                     producto.setFecha(fechaCaducidad);
                     bandera = false;
                 } else {

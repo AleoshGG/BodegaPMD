@@ -1,7 +1,6 @@
 package models;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 import javafx.scene.control.Alert;
 
 public class Anaquel {

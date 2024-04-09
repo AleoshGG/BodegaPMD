@@ -1,6 +1,6 @@
 package models;
 
-public abstract class Persona {
+public class Persona {
     //Atributos heredables 
     protected String nombre;
     
@@ -13,7 +13,4 @@ public abstract class Persona {
         return nombre;
     }
         
-    //Demás métodos
-    protected abstract String verSujeto();
-    
 }

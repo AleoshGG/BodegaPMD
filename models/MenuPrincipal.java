@@ -112,7 +112,7 @@ public class MenuPrincipal extends Menu {
                 if (inventario.getListaProductos().get(i).getCategoria().equals(categoria)) {
                     System.out.println("Categoria: "+inventario.getListaProductos().get(i).getCategoria()+" Nombre: "+inventario.getListaProductos().get(i).getNombre()+" Cantidad: "+inventario.getListaProductos().get(i).getExistenciaProducto()+" Codigo de barras: "+inventario.getListaProductos().get(i).getCodigoBarras()
                                       +" Costo: "+inventario.getListaProductos().get(i).getCosto()+" Caducidad: "+inventario.getListaProductos().get(i).getFechaCaducidad().get(Calendar.YEAR)+"-"+inventario.getListaProductos().get(i).getFechaCaducidad().get(Calendar.MONTH)+"-"+inventario.getListaProductos().get(i).getFechaCaducidad().get(Calendar.DAY_OF_MONTH)
-                                      +"Proveedor: "+inventario.getListaProductos().get(i).getProveedor().getNombre());
+                                      +" Proveedor: "+inventario.getListaProductos().get(i).getProveedor().getNombre());
                     bandera = false;
                 }    
             }
